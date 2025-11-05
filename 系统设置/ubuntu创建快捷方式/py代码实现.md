@@ -189,6 +189,6 @@ if __name__ == "__main__":
 写脚本执行py文件
 
 ```sh
-/usr/bin/env python3 "./main.py"
+/usr/bin/env python3 "/path/to/main.py"
 ```
 
