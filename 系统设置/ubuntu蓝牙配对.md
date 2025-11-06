@@ -1,7 +1,17 @@
 参考教程：https://www.youtube.com/watch?v=OduvBIulpA4
 
+win确认连接蓝牙会生成一个key，ubuntu生成蓝牙秘钥也会生成一个key。蓝牙设备基于电脑的MAC和key来判断能不能连接成功，两个都对了，就可以连接。
+
+第一步，在win下面删除蓝牙设备。
+
+第二步，进入ubuntu，连接蓝牙设备，生成蓝牙秘钥之后，确认连接，这样蓝牙设备就可以在Ubuntu使用了。但是不可以在win使用。
+
+第三步，进入win，尝试连接蓝牙设备，直到正常连接上，点击确认连接。
+
+第四步，进入Ubuntu，**不要去连接蓝牙**，复制win的key到ubuntu的key。
+
 ```bash
-# 文件管理器找到C系统盘/Windows/System32/config/,右键打开终端
+cd /media/mzz/系统/Windows/System32/config  # 别的电脑按需修改
 chntpw -e SYSTEM
 cd ControlSet001
 cd Services
