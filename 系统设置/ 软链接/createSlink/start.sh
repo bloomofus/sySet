@@ -1,0 +1,1 @@
+/usr/bin/env python3 /home/mzz/apps/createSlink/createSlink.py

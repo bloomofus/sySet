@@ -38,3 +38,4 @@ nano info # 修改这个文件，key修改为上面复制的key，不留空格
 sudo systemctl restart bluetooth
 ```
 
+

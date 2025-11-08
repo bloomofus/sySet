@@ -78,8 +78,8 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
    注意避免当前分支和要Push的远程分支名不同。
 
    ```shell
-   # 1. 重命名当前分支 master 为 main
-   git branch -m master main
+   # 1. 重命名当前分支 master 为 main（如果需要）
+   #git branch -m master main
    # 2. 推送到远程 main
    git push -u origin main	# 第二次及以后只需要git push
    ```
