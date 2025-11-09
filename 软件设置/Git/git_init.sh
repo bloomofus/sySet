@@ -25,6 +25,9 @@ alias gc='git commit'
 alias gpp='git push'
 alias gp='git pull'
 alias gb='git branch'
+alias gres='git restore .' # 放弃工作区修改
+alias gcl_list='git clean -n -d' # 查看将要删除的未跟踪文件
+alias gcl_del='git clean -f -d' # 删除未跟踪文件
 # <<< 自定义git快捷命令 <<<
 
 EOF
