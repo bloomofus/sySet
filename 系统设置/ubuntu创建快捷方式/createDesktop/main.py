@@ -114,6 +114,8 @@ Name={name}
 Comment=Custom application launcher
 Exec={exec_path}
 Icon={icon_path}
+# 使用xprop | grep WM_CLASS,然后点击窗口获取其名字
+StartupWMClass=Gimp # 窗口的名字,防止程序启动子程序，图标变为齿轮
 Terminal=false
 Categories=Utility;
 """
