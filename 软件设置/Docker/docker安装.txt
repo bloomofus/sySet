@@ -6,3 +6,5 @@ docker要配置镜像源，具体大模型给的教程，镜像配置执行要�
 
 ubuntu24需要依赖kvm，这个模块内置的，不过需要加载一个intel模块
 在运行docker之前，需要执行 modprobe kvm_intel这个命令。
+
+可以在.bashrc设置alias dk='sudo docker'
