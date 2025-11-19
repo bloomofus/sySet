@@ -1,0 +1,24 @@
+镜像相关
+docker images                           # 展示所有镜像
+docker pull ubuntu                      # 拉取镜像
+docker rmi <镜像名或ID>                  # 删除镜像
+
+
+容器相关:
+docker run -it --rm ubuntu bash        # 从镜像启动容器，使用bash命令，-it 表示交互式，-rm 表示删除容器
+docker run -it ubuntu bash             # 从镜像启动一个容器，并进入容器，使用bash命令
+docker run -d --name my-nginx nginx    # 从镜像启动一个容器，并设置容器名，-d 后台运行
+docker start <容器名或ID>               # 后台方式启动已有容器
+docker exec -it my-ubuntu bash         # 以终端模式进入容器，-it 后台方式进入容器
+docker ps          # 查看正在运行的容器
+docker ps -a       # 查看所有容器（含已停止的）
+docker stop <容器名或ID>        # 停止容器
+docker kill <容器名或ID>        # 强制停止容器
+docker rm <容器名或ID>          # 删除容器
+docker rm -f <容器名或ID>       # 强制删除容器，即使正在运行
+
+重要参数：
+-it ：交互式
+-d ：后台运行
+--rm ：删除容器
+--name <容器名>
