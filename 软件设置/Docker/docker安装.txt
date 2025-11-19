@@ -1,0 +1,8 @@
+安装docker desktop参考：https://docs.docker.com/desktop/setup/install/linux/ubuntu/
+安装docker engine参考：https://docs.docker.com/engine/install/ubuntu/?spm=a2ty_o01.29997173.0.0.6c13c921Y3DGYJ
+按照这个教程一步一步来，主要参考docker desktop教程。
+
+docker要配置镜像源，具体大模型给的教程，镜像配置执行要重启才行。
+
+ubuntu24需要依赖kvm，这个模块内置的，不过需要加载一个intel模块
+在运行docker之前，需要执行 modprobe kvm_intel这个命令。
