@@ -11,27 +11,23 @@
 
 ## 方式一：Docker 部署（推荐）
 
-### 步骤 1：安装 Docker Desktop
-
-1. 下载：https://www.docker.com/products/docker-desktop/
-2. 安装后重启电脑
-3. 打开 Docker Desktop 确保运行中
+### 步骤1：安装wsl2+docker环境
 
 ---
 
 ### 步骤 2：创建目录结构
 
-```powershell
-# 在你想要的位置创建目录，比如 D 盘
-mkdir D:\halo
-cd D:\halo
+```bash
+# 在你想要的位置创建目录
+mkdir -p ~/halo
+cd ~/halo
 ```
 
 ---
 
 ### 步骤 3：创建 docker-compose.yml
 
-在 `D:\halo` 目录下创建 `docker-compose.yml` 文件：
+在 `~/halo` 目录下创建 `docker-compose.yml` 文件：
 
 ```yaml
 version: "3"
@@ -56,12 +52,84 @@ services:
 
 ### 步骤 4：启动 Halo
 
-```powershell
-cd D:\halo
+```bash
+cd ~/halo
 docker-compose up -d
 ```
 
 等待下载完成后，访问：**http://localhost:8090**
+
+----
+
+### 步骤5：关闭以及重启
+
+1）停止（关闭服务，但保留容器）
+
+```bash
+cd ~/halo
+docker compose stop
+```
+
+2）启动（重新启动已存在的容器）
+
+```bash
+cd ~/halo
+docker compose start
+```
+
+3）重启（最常用）
+
+```bash
+cd ~/halo
+docker compose restart
+```
+
+如果你只想重启 halo（不重启数据库）：
+
+```bash
+docker compose restart halo
+```
+
+4）停止并删除容器（但保留数据）
+
+```bash
+cd ~/halo
+docker compose down
+```
+
+> `down` 会删除容器和网络，但不会删你的数据卷目录（你映射的是 `./halo2` 和 `./db`）。
+
+5）彻底清空（删除容器 + 删除数据）
+
+⚠️ 会清掉博客所有数据，谨慎操作：
+
+```bash
+cd ~/halo
+docker compose down
+rm -rf halo2 db
+```
+
+6）查看运行状态
+
+```bash
+docker compose ps
+```
+
+7）查看日志（排错用）
+
+```bash
+docker compose logs -f
+```
+
+只看 halo：
+
+```bash
+docker compose logs -f halo
+```
+
+### 步骤6：设置自启动
+
+如果你想要“开机自动启动”，只要 compose 文件里 `restart: on-failure:3` 改成 `restart: always` 即可。
 
 ---
 

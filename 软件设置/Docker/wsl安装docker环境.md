@@ -96,7 +96,7 @@ sudo docker run hello-world
 创建换源文件：
 
 ```bash
-sudo mkdir /etc/docker/daemon.json
+sudo mkdir -p /etc/docker/
 sudo nano /etc/docker/daemon.json
 ```
 
